@@ -64,6 +64,9 @@ fun telaPrincipal () {
             Row {
                 exercicios()
             }
+            Row {
+                footer()
+            }
         }
     }
 }
@@ -176,7 +179,82 @@ fun exercicios () {
 @Composable
 @Preview
 fun footer () {
+    Surface(
+        modifier = Modifier
+            .background(Color.White)
+            .height(100.dp)
+            .padding(10.dp)
+            .fillMaxWidth()
+    ) {
+        Column (
+            modifier = Modifier.background(Color.White)
+        ) {
+            Row (
+                modifier = Modifier.background(Color.White),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
 
+                Box (
+                    modifier = Modifier
+                        .border(width = 2.dp, Color.White, RoundedCornerShape(3.dp))
+                        .clip(RoundedCornerShape(8.dp))
+                        .background(Color.White)
+                        .size(30.dp)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.casa),
+                        contentScale = ContentScale.Crop,
+                        contentDescription = "bandeira dos Estados Unidos",
+                        modifier = Modifier
+                            .background(Color.White)
+                            .padding(1.dp)
+                            .fillMaxWidth()
+                    )
+                }
+                Spacer(modifier = Modifier.width(30.dp))
+                Image(
+                    painter = painterResource(id = R.drawable.fone),
+                    contentScale = ContentScale.Crop,
+                    contentDescription = "bandeira dos Estados Unidos",
+                    modifier = Modifier
+                        .background(Color.White)
+                        .padding(1.dp)
+                        .size(40.dp)
+                )
+                Spacer(modifier = Modifier.width(40.dp))
+                Image(
+                    painter = painterResource(id = R.drawable.haltere),
+                    contentScale = ContentScale.Fit,
+                    contentDescription = "bandeira dos Estados Unidos",
+                    modifier = Modifier
+                        .background(Color.White)
+                        .padding(1.dp)
+                        .size(35.dp)
+                )
+                Spacer(modifier = Modifier.width(30.dp))
+                Image(
+                    painter = painterResource(id = R.drawable.escud),
+                    contentScale = ContentScale.Crop,
+                    contentDescription = "bandeira dos Estados Unidos",
+                    modifier = Modifier
+                        .background(Color.White)
+                        .padding(1.dp)
+                        .size(60.dp)
+                )
+                Spacer(modifier = Modifier.width(30.dp))
+                Image(
+                    painter = painterResource(id = R.drawable.trofeu),
+                    contentScale = ContentScale.Crop,
+                    contentDescription = "bandeira dos Estados Unidos",
+                    modifier = Modifier
+                        .background(Color.White)
+                        .padding(1.dp)
+                        .size(60.dp)
+                )
+            }
+        }
+    }
+    HorizontalDivider(thickness = 2.dp, color = Color.Gray)
 }
 
 @Preview
