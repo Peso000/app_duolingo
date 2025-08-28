@@ -37,6 +37,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.zIndex
 import com.example.duolingo.ui.theme.DuolingoTheme
 
 class MainActivity : ComponentActivity() {
@@ -71,12 +72,14 @@ fun telaPrincipal () {
 @Composable
 fun tituloUnidade () {
     Surface (
-        modifier = Modifier.background(Color(red = 91, green = 203, blue = 4))
+        modifier = Modifier
+            .background(Color(red = 91, green = 203, blue = 4))
             .fillMaxWidth()
             .height(80.dp)
     ) {
         Column(
-            modifier = Modifier.background(Color(red = 91, green = 203, blue = 4))
+            modifier = Modifier
+                .background(Color(red = 91, green = 203, blue = 4))
                 .padding(13.dp)
         ) {
             Row (
@@ -87,7 +90,7 @@ fun tituloUnidade () {
                     Text(
                         text = "Unit 1",
                         color = Color.White,
-                        fontSize = 17.sp,
+                        fontSize = 20.sp,
                         style = TextStyle(fontWeight = FontWeight.Bold)
                     )
                     Spacer(modifier = Modifier.height(12.dp))
@@ -99,7 +102,12 @@ fun tituloUnidade () {
                 }
                 Spacer(modifier = Modifier.width(60.dp))
                 Box (
-                    modifier = Modifier.border(width = 2.dp, Color(red = 76, green = 177, blue = 4), RoundedCornerShape(3.dp))
+                    modifier = Modifier
+                        .border(
+                            width = 2.dp,
+                            Color(red = 76, green = 177, blue = 4),
+                            RoundedCornerShape(3.dp)
+                        )
                         .clip(RoundedCornerShape(8.dp))
                         .background(Color(red = 91, green = 203, blue = 4))
                         .size(42.dp)
@@ -116,15 +124,74 @@ fun tituloUnidade () {
                 }
             }
         }
-        HorizontalDivider(color = Color(red = 76, green = 177, blue = 4), thickness = 2.dp)
+        HorizontalDivider(thickness = 2.dp, color = Color(red = 76, green = 177, blue = 4))
     }
 }
 
 @Preview
 @Composable
 fun exercicios () {
-    Surface {
+    Surface (
+        modifier = Modifier
+            .background(Color.White)
+            .height(440.dp)
+            .fillMaxWidth()
+            .padding(10.dp)
+    ) {
+        Column {
+            Row {
+                Spacer(modifier = Modifier.width(180.dp))
+                botao()
+            }
+            Row {
+                Spacer(modifier = Modifier.width(110.dp))
+                botao()
+            }
+            Row (
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Spacer(modifier = Modifier.width(90.dp))
+                botao()
+                Spacer(modifier = Modifier.width(60.dp))
+                Image(
+                    painter = painterResource(id = R.drawable.duolingo),
+                    contentDescription = "botao",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .background(Color.Transparent)
+                        .padding(1.dp)
+                        .size(120.dp)
+                )
+            }
+            Row {
+                Spacer(modifier = Modifier
+                    .width(120.dp)
+                    .height(10.dp))
+                botao()
+            }
+        }
+    }
+}
 
+@Composable
+@Preview
+fun footer () {
+
+}
+
+@Preview
+@Composable
+fun botao () {
+    Column {
+        Image(
+            painter = painterResource(id = R.drawable.botao),
+            contentDescription = "botao",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .background(Color.Transparent)
+                .padding(1.dp)
+                .size(95.dp)
+        )
     }
 }
 
@@ -132,7 +199,8 @@ fun exercicios () {
 @Composable
 fun header() {
     Surface(
-        modifier = Modifier.background(Color(red = 91, green = 203, blue = 4))
+        modifier = Modifier
+            .background(Color(red = 91, green = 203, blue = 4))
             .height(60.dp)
             .padding(10.dp)
             .fillMaxWidth()
@@ -145,7 +213,8 @@ fun header() {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Box (
-                    modifier = Modifier.border(width = 2.dp, Color.White, RoundedCornerShape(3.dp))
+                    modifier = Modifier
+                        .border(width = 2.dp, Color.White, RoundedCornerShape(3.dp))
                         .clip(RoundedCornerShape(8.dp))
                         .background(Color(red = 91, green = 203, blue = 4))
                         .width(50.dp)
