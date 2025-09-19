@@ -194,24 +194,16 @@ fun footer () {
                 verticalAlignment = Alignment.CenterVertically
             ) {
 
-                Box (
+                Image(
+                    painter = painterResource(id = R.drawable.casa),
+                    contentScale = ContentScale.Crop,
+                    contentDescription = "bandeira dos Estados Unidos",
                     modifier = Modifier
-                        .border(width = 2.dp, Color.White, RoundedCornerShape(3.dp))
-                        .clip(RoundedCornerShape(8.dp))
                         .background(Color.White)
-                        .size(30.dp)
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.casa),
-                        contentScale = ContentScale.Crop,
-                        contentDescription = "bandeira dos Estados Unidos",
-                        modifier = Modifier
-                            .background(Color.White)
-                            .padding(1.dp)
-                            .fillMaxWidth()
-                    )
-                }
-                Spacer(modifier = Modifier.width(30.dp))
+                        .padding(1.dp)
+                        .size(60.dp)
+                )
+
                 Image(
                     painter = painterResource(id = R.drawable.fone),
                     contentScale = ContentScale.Crop,
@@ -221,7 +213,6 @@ fun footer () {
                         .padding(1.dp)
                         .size(40.dp)
                 )
-                Spacer(modifier = Modifier.width(40.dp))
                 Image(
                     painter = painterResource(id = R.drawable.haltere),
                     contentScale = ContentScale.Fit,
@@ -229,11 +220,10 @@ fun footer () {
                     modifier = Modifier
                         .background(Color.White)
                         .padding(1.dp)
-                        .size(35.dp)
+                        .size(100.dp)
                 )
-                Spacer(modifier = Modifier.width(30.dp))
                 Image(
-                    painter = painterResource(id = R.drawable.escud),
+                    painter = painterResource(id = R.drawable.escudo),
                     contentScale = ContentScale.Crop,
                     contentDescription = "bandeira dos Estados Unidos",
                     modifier = Modifier
@@ -241,20 +231,28 @@ fun footer () {
                         .padding(1.dp)
                         .size(60.dp)
                 )
-                Spacer(modifier = Modifier.width(30.dp))
                 Image(
-                    painter = painterResource(id = R.drawable.trofeu),
+                    painter = painterResource(id = R.drawable.trofeo),
                     contentScale = ContentScale.Crop,
                     contentDescription = "bandeira dos Estados Unidos",
                     modifier = Modifier
                         .background(Color.White)
                         .padding(1.dp)
-                        .size(60.dp)
+                        .size(40.dp)
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.menu),
+                    contentScale = ContentScale.Fit,
+                    contentDescription = "bandeira dos Estados Unidos",
+                    modifier = Modifier
+                        .background(Color.White)
+                        .padding(1.dp)
+                        .size(150.dp)
                 )
             }
         }
     }
-    HorizontalDivider(thickness = 2.dp, color = Color.Gray)
+    HorizontalDivider(thickness = 2.dp, color = Color.Black)
 }
 
 @Preview
