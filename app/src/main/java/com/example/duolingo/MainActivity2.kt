@@ -101,7 +101,7 @@ fun DuolingoQuestScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF081A2B)) // fundo escuro azulado
+            .background(Color(0xFF081A2B)) 
             .verticalScroll(scrollState)
             .padding(16.dp)
     ) {
@@ -126,10 +126,10 @@ fun DuolingoQuestScreen() {
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // Barra de progresso grande
+
         QuestProgressBar(
             title = "Complete 40 quests",
-            progress = 0.5f, // 20 / 40
+            progress = 0.5f,
             label = "20/40"
         )
 
@@ -150,7 +150,7 @@ fun DuolingoQuestScreen() {
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // Lista de Quests diárias
+
         DailyQuestCard(
             icon = Icons.Default.Star,
             title = "Complete your next 2 lessons",
