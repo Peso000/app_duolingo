@@ -33,6 +33,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -56,7 +57,7 @@ fun telaPrincipal () {
     Surface {
         Column {
             Row {
-                header()
+                header(Color(red = 91, green = 203, blue = 4), Color.White)
             }
             Row {
                 tituloUnidade()
@@ -183,7 +184,6 @@ fun footer () {
         modifier = Modifier
             .background(Color.White)
             .height(100.dp)
-            .padding(10.dp)
             .fillMaxWidth()
     ) {
         Column (
@@ -247,7 +247,7 @@ fun footer () {
                     modifier = Modifier
                         .background(Color.White)
                         .padding(1.dp)
-                        .size(150.dp)
+                        .size(250.dp)
                 )
             }
         }
@@ -271,28 +271,27 @@ fun botao () {
     }
 }
 
-@Preview
 @Composable
-fun header() {
+fun header(color: Color, colorFont: Color) {
     Surface(
         modifier = Modifier
-            .background(Color(red = 91, green = 203, blue = 4))
+            .background(color)
             .height(60.dp)
             .padding(10.dp)
             .fillMaxWidth()
     ) {
         Column (
-            modifier = Modifier.background(Color(red = 91, green = 203, blue = 4))
+            modifier = Modifier.background(color)
         ) {
             Row (
-                modifier = Modifier.background(Color(red = 91, green = 203, blue = 4)),
+                modifier = Modifier.background(color),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Box (
                     modifier = Modifier
                         .border(width = 2.dp, Color.White, RoundedCornerShape(3.dp))
                         .clip(RoundedCornerShape(8.dp))
-                        .background(Color(red = 91, green = 203, blue = 4))
+                        .background(color)
                         .width(50.dp)
                         .size(30.dp)
                 ) {
@@ -301,7 +300,7 @@ fun header() {
                         contentScale = ContentScale.Crop,
                         contentDescription = "bandeira dos Estados Unidos",
                         modifier = Modifier
-                            .background(Color(red = 91, green = 203, blue = 4))
+                            .background(color)
                             .padding(1.dp)
                             .fillMaxWidth()
                     )
@@ -312,13 +311,13 @@ fun header() {
                     contentScale = ContentScale.Crop,
                     contentDescription = "bandeira dos Estados Unidos",
                     modifier = Modifier
-                        .background(Color(red = 91, green = 203, blue = 4))
+                        .background(color)
                         .padding(1.dp)
                         .size(40.dp)
                 )
                 Text(
                     text = "1",
-                    color = Color.White,
+                    color = colorFont,
                     fontSize = 17.sp,
                     style = TextStyle(fontWeight = FontWeight.Bold)
                 )
@@ -328,13 +327,13 @@ fun header() {
                     contentScale = ContentScale.Fit,
                     contentDescription = "bandeira dos Estados Unidos",
                     modifier = Modifier
-                        .background(Color(red = 91, green = 203, blue = 4))
+                        .background(color)
                         .padding(1.dp)
                         .size(35.dp)
                 )
                 Text(
                     text = "500",
-                    color = Color.White,
+                    color = colorFont,
                     fontSize = 17.sp,
                     style = TextStyle(fontWeight = FontWeight.Bold)
                 )
@@ -344,13 +343,13 @@ fun header() {
                     contentScale = ContentScale.Crop,
                     contentDescription = "bandeira dos Estados Unidos",
                     modifier = Modifier
-                        .background(Color(red = 91, green = 203, blue = 4))
+                        .background(color)
                         .padding(1.dp)
                         .size(80.dp)
                 )
                 Text(
                     text = "4",
-                    color = Color.White,
+                    color = colorFont,
                     fontSize = 17.sp,
                     style = TextStyle(fontWeight = FontWeight.Bold)
                 )
